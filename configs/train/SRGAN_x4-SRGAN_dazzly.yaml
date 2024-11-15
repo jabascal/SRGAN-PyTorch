@@ -1,5 +1,5 @@
 # experiment name
-EXP_NAME: SRGAN_x4-SRGAN_dazzly_4k
+EXP_NAME: SRGAN_x4-SRGAN_dazzly_4k_100ep
 # random number seed
 SEED: 0
 # super resolution magnification factor
@@ -42,7 +42,7 @@ TRAIN:
 
   # training hyperparameters
   HYP:
-    EPOCHS: 18
+    EPOCHS: 100
 
     IMGS_PER_BATCH: 2
     SHUFFLE: True
@@ -100,4 +100,4 @@ TEST:
   # Only test Y channel
   ONLY_TEST_Y_CHANNEL: True
 
-  SAVE_IMAGE_DIR: "results/SRGAN_x4-SRGAN_dazzly_4k"
+  SAVE_IMAGE_DIR: "results/SRGAN_x4-SRGAN_dazzly_4k_imgs_100ep"
