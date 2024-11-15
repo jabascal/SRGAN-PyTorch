@@ -1,5 +1,5 @@
 # experiment name
-EXP_NAME: SRGAN_x4-SRGAN_dazzly
+EXP_NAME: SRGAN_x4-SRGAN_dazzly_4k
 # random number seed
 SEED: 0
 # super resolution magnification factor
@@ -29,9 +29,9 @@ MODEL:
 
 TRAIN:
   DATASET:
-    TRAIN_GT_IMAGES_DIR: "../../Data/dazzly/for_segmentation/one_color_per_symbol/4096/bw_crop_srgan"
+    TRAIN_GT_IMAGES_DIR: "../../Data/dazzly/for_segmentation/one_color_per_symbol/4096_bw"
 
-    GT_IMAGE_SIZE: 512
+    GT_IMAGE_SIZE: 4096
 
   # Model file address, used for pre-training and recovery training
   CHECKPOINT:
@@ -42,9 +42,9 @@ TRAIN:
 
   # training hyperparameters
   HYP:
-    EPOCHS: 1
+    EPOCHS: 18
 
-    IMGS_PER_BATCH: 16
+    IMGS_PER_BATCH: 2
     SHUFFLE: True
     NUM_WORKERS: 4
     PIN_MEMORY: True
@@ -85,8 +85,9 @@ TRAIN:
 
 TEST:
   DATASET:
-    PAIRED_TEST_GT_IMAGES_DIR: "../../Data/dazzly/for_segmentation/one_color_per_symbol/4096/bw_crop_srgan_test/GT"
-    PAIRED_TEST_LR_IMAGES_DIR: "../../Data/dazzly/for_segmentation/one_color_per_symbol/4096/bw_crop_srgan_test/LR"
+    PAIRED_TEST_GT_IMAGES_DIR: "../../Data/dazzly/for_segmentation/one_color_per_symbol/4096_bw_test/GT"
+    PAIRED_TEST_LR_IMAGES_DIR: "../../Data/dazzly/for_segmentation/one_color_per_symbol/4096_bw_test/LR"
+
 
   # Test hyperparameters
   HYP:
@@ -99,4 +100,4 @@ TEST:
   # Only test Y channel
   ONLY_TEST_Y_CHANNEL: True
 
-  SAVE_IMAGE_DIR: "results/SRGAN_x4-SRGAN_dazzly"
+  SAVE_IMAGE_DIR: "results/SRGAN_x4-SRGAN_dazzly_4k"
